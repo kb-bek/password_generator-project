@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"> &nbsp; &nbsp; &nbsp;  🔑 Secure Password Generator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href=" {% url 'home' %}">Главная<span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=" {% url 'about' %} ">О приложении</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+
+
+    <div class="container text-center">
+
+        <br><br><br>
+        <h2>Генератор паролей</h2>
+
+        <br>
+        <form action="{% url 'password' %}">
+            <select name="length">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12" selected="selected">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select> Длина
+            <br>
+            <input type="checkbox" name="uppercase"> Заглавные буквы
+            <br>
+            <input type="checkbox" name="numbers"> Цифры
+            <br>
+            <input type="checkbox" name="special"> Символы
+            <br>
+
+            <br>
+            <input type="submit" value="Сгенерировать" class="btn btn-primary">
+
+
+        </form>
+    </div>
+</body>
+</html>
